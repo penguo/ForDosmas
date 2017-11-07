@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fs3_fab_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="30dp"
+        android:clickable="true"
+        android:scaleType="center"
+        app:fabSize="normal"
+        app:srcCompat="@drawable/ic_archive" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+
+            <LinearLayout
+                android:id="@+id/fs3_jumbo"
+                style="@style/Fs3Layout"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/ItemTextView"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="-5dp"
+                    android:text="점보" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="15dp"
+                        android:text="양이 늘어납니다."
+                        android:textSize="15sp" />
+
+                    <TextView
+                        style="@style/ItemTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="bottom|right"
+                        android:text="1000원"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fs3_wedge"
+                style="@style/Fs3Layout"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    style="@style/ItemTextView"
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="-5dp"
+                    android:text="웨지감자" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="15dp"
+                        android:text="밥 대신 감자가 들어갑니다."
+                        android:textSize="15sp" />
+
+                    <TextView
+                        style="@style/ItemTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="bottom|right"
+                        android:text="500원"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fs3_doublecheese"
+                style="@style/Fs3Layout"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/ItemTextView"
+                    android:text="더블 치즈" />
+
+                <TextView
+                    style="@style/ItemTextView"
+                    android:layout_width="match_parent"
+                    android:gravity="bottom|right"
+                    android:text="500원"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fs3_mozarella"
+                style="@style/Fs3Layout"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/ItemTextView"
+                    android:text="모짜렐라" />
+
+                <TextView
+                    style="@style/ItemTextView"
+                    android:layout_width="match_parent"
+                    android:gravity="bottom|right"
+                    android:text="1,000원"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fs3_jalapeno"
+                style="@style/Fs3Layout"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/ItemTextView"
+                    android:text="할라피뇨 고추" />
+
+                <TextView
+                    style="@style/ItemTextView"
+                    android:layout_width="match_parent"
+                    android:gravity="bottom|right"
+                    android:text="500원"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fs3_bean"
+                style="@style/Fs3Layout"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/ItemTextView"
+                    android:text="콩" />
+
+                <TextView
+                    style="@style/ItemTextView"
+                    android:layout_width="match_parent"
+                    android:gravity="bottom|right"
+                    android:text="500원"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fs3_bean2"
+                style="@style/Fs3Layout"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/ItemTextView"
+                    android:text="콩" />
+
+                <TextView
+                    style="@style/ItemTextView"
+                    android:layout_width="match_parent"
+                    android:gravity="bottom|right"
+                    android:text="500원"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fs3_bean3"
+                style="@style/Fs3Layout"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/ItemTextView"
+                    android:text="콩" />
+
+                <TextView
+                    style="@style/ItemTextView"
+                    android:layout_width="match_parent"
+                    android:gravity="bottom|right"
+                    android:text="500원"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

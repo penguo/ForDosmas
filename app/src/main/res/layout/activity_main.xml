@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.pepg.fordosmas.MainActivity">
+
+    <Button
+        android:id="@+id/main_btn_add"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="새로운 메뉴"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="혹은 이전에 먹었던 메뉴" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/main_rcv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

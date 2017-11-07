@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/fs2_spice0"
+        style="@style/SettingLayout"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/ItemTextView"
+            android:text="안 매운 맛" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fs2_spice2"
+        style="@style/SettingLayout"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/ItemTextView"
+            android:text="조금 매운 맛" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fs2_spice9"
+        style="@style/SettingLayout"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/ItemTextView"
+            android:text="아주 매운 맛" />
+    </LinearLayout>
+
+</LinearLayout>

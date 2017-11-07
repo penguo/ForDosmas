@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Dosmas Helper</string>
+
+    <string-array name="titles">
+        <item>고기선택</item>
+        <item>소스선택</item>
+        <item>추가메뉴</item>
+        <item>사이드메뉴</item>
+    </string-array>
+
+    <string name="jumbo">점보</string>
+    <string name="wedge">감자</string>
+    <string name="doublecheese">더블치즈</string>
+    <string name="mozarella">모짜</string>
+    <string name="jalapeno">할라피뇨</string>
+    <string name="bean">콩</string>
+</resources>

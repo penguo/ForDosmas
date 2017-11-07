@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/fs1_cow"
+        style="@style/SettingLayout"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/ItemTextView"
+            android:text="소" />
+
+        <TextView
+            style="@style/ItemTextView"
+            android:layout_width="match_parent"
+            android:gravity="bottom|right"
+            android:text="+ 500원"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fs1_chicken"
+        style="@style/SettingLayout"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/ItemTextView"
+            android:text="닭" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fs1_mix"
+        style="@style/SettingLayout"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/ItemTextView"
+            android:text="믹스" />
+    </LinearLayout>
+
+</LinearLayout>
