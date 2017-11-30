@@ -25,6 +25,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +35,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import static com.pepg.fordosmas.AddActivity.additionMenu;
+import static com.pepg.fordosmas.AddActivity.price;
+import static com.pepg.fordosmas.AddActivity.results;
 
 
 /**
@@ -45,7 +48,7 @@ public class Step3Fragment extends Fragment implements View.OnClickListener {
     LinearLayout fs3Jumbo, fs3Wedge, fs3DoubleCheese, fs3Mozarella, fs3Jalapeno, fs3Bean;
     Activity activity;
     StringBuffer sb;
-    FloatingActionButton fab;
+    FloatingActionButton fab, fabMore;
 
     public Step3Fragment() {
     }
@@ -57,7 +60,7 @@ public class Step3Fragment extends Fragment implements View.OnClickListener {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        CoordinatorLayout layout = (CoordinatorLayout) inflater.inflate(R.layout.fragment_step3, container, false);
+        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_step3, container, false);
 
         fs3Jumbo = (LinearLayout) layout.findViewById(R.id.fs3_jumbo);
         fs3Wedge = (LinearLayout) layout.findViewById(R.id.fs3_wedge);
@@ -66,6 +69,7 @@ public class Step3Fragment extends Fragment implements View.OnClickListener {
         fs3Jalapeno = (LinearLayout) layout.findViewById(R.id.fs3_jalapeno);
         fs3Bean = (LinearLayout) layout.findViewById(R.id.fs3_bean);
         fab = (FloatingActionButton) layout.findViewById(R.id.fs3_fab_end);
+        fabMore = (FloatingActionButton) layout.findViewById(R.id.fs3_fab_more);
 
         fs3Jumbo.setOnClickListener(this);
         fs3Wedge.setOnClickListener(this);
@@ -74,6 +78,7 @@ public class Step3Fragment extends Fragment implements View.OnClickListener {
         fs3Jalapeno.setOnClickListener(this);
         fs3Bean.setOnClickListener(this);
         fab.setOnClickListener(this);
+        fabMore.setOnClickListener(this);
 
         activity = getActivity();
 
@@ -155,6 +160,9 @@ public class Step3Fragment extends Fragment implements View.OnClickListener {
                 setClipBoardData(activity, AddActivity.result);
                 activity.finish();
                 break;
+            case (R.id.fs3_fab_more):
+                ((AddActivity)activity).addMore();
+                break;
         }
         setBackground();
         sb = new StringBuffer();
@@ -166,42 +174,46 @@ public class Step3Fragment extends Fragment implements View.OnClickListener {
     }
 
     public static void setClipBoardData(Context context, String data) {
+        DBManager dbManager = new DBManager(context, "dosmas.db", null, MainActivity.DB_VERSION);
+        dbManager.insert(data, price);
+        results += data + "\n";
         ClipboardManager clipboardManager = (ClipboardManager) context.getSystemService(context.CLIPBOARD_SERVICE);
-        ClipData clipData = ClipData.newPlainText("label", data);
+        ClipData clipData = ClipData.newPlainText("label", results);
         clipboardManager.setPrimaryClip(clipData);
-        Toast.makeText(context, "클립보드에 복사되었습니다.", Toast.LENGTH_SHORT).show();
     }
 
     public void setBackground() {
+        TypedValue outValue = new TypedValue();
+        getContext().getTheme().resolveAttribute(android.R.attr.selectableItemBackground, outValue, true);
         if (AddActivity.bJumbo) {
             fs3Jumbo.setBackgroundResource(R.drawable.xml_border_line_selected);
         } else {
-            fs3Jumbo.setBackgroundResource(R.drawable.xml_border_line);
+            fs3Jumbo.setBackgroundResource(outValue.resourceId);
         }
         if (AddActivity.bWedge) {
             fs3Wedge.setBackgroundResource(R.drawable.xml_border_line_selected);
         } else {
-            fs3Wedge.setBackgroundResource(R.drawable.xml_border_line);
+            fs3Wedge.setBackgroundResource(outValue.resourceId);
         }
         if (AddActivity.bDoubleCheese) {
             fs3DoubleCheese.setBackgroundResource(R.drawable.xml_border_line_selected);
         } else {
-            fs3DoubleCheese.setBackgroundResource(R.drawable.xml_border_line);
+            fs3DoubleCheese.setBackgroundResource(outValue.resourceId);
         }
         if (AddActivity.bMozarella) {
             fs3Mozarella.setBackgroundResource(R.drawable.xml_border_line_selected);
         } else {
-            fs3Mozarella.setBackgroundResource(R.drawable.xml_border_line);
+            fs3Mozarella.setBackgroundResource(outValue.resourceId);
         }
         if (AddActivity.bJalapeno) {
             fs3Jalapeno.setBackgroundResource(R.drawable.xml_border_line_selected);
         } else {
-            fs3Jalapeno.setBackgroundResource(R.drawable.xml_border_line);
+            fs3Jalapeno.setBackgroundResource(outValue.resourceId);
         }
         if (AddActivity.bBean) {
             fs3Bean.setBackgroundResource(R.drawable.xml_border_line_selected);
         } else {
-            fs3Bean.setBackgroundResource(R.drawable.xml_border_line);
+            fs3Bean.setBackgroundResource(outValue.resourceId);
         }
     }
 }

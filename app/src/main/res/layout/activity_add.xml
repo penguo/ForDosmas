@@ -15,107 +15,109 @@
 
         <android.support.design.widget.CoordinatorLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:background="#ff252e39">
-
-            </FrameLayout>
+            android:layout_height="wrap_content"
+            android:background="#ff252e39">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="10dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        style="@style/ItemTextView"
-                        android:layout_height="match_parent"
-                        android:gravity="bottom"
-                        android:text="현재 메뉴: "
-                        android:textColor="#AAFFFFFF"
-                        android:textSize="21sp" />
-
-                    <TextView
-                        android:id="@+id/aguide_tv"
-                        style="@style/ItemTextView"
-                        android:layout_width="match_parent"
-                        android:textColor="#AAFFFFFF"
-                        android:textSize="24sp" />
-                </LinearLayout>
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="right"
-                    android:orientation="horizontal">
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
-                    <TextView
-                        style="@style/ItemTextView"
-                        android:layout_height="match_parent"
-                        android:gravity="bottom"
-                        android:text="가격: "
-                        android:textColor="#AAFFFFFF"
-                        android:textSize="15sp" />
-
-                    <TextView
-                        android:id="@+id/aguide_tv_price"
-                        style="@style/ItemTextView"
-                        android:text="Price View"
-                        android:textColor="#AAFFFFFF"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        style="@style/ItemTextView"
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="원"
-                        android:textColor="#AAFFFFFF"
-                        android:textSize="18sp" />
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/ItemTextView"
+                            android:layout_height="match_parent"
+                            android:gravity="bottom"
+                            android:text="현재 메뉴: "
+                            android:textColor="#AAFFFFFF"
+                            android:textSize="21sp" />
+
+                        <TextView
+                            android:id="@+id/aguide_tv"
+                            style="@style/ItemTextView"
+                            android:layout_width="match_parent"
+                            android:textColor="#AAFFFFFF"
+                            android:textSize="24sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/ItemTextView"
+                            android:layout_height="match_parent"
+                            android:gravity="bottom"
+                            android:text="가격: "
+                            android:textColor="#AAFFFFFF"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/aguide_tv_price"
+                            style="@style/ItemTextView"
+                            android:text="Price View"
+                            android:textColor="#AAFFFFFF"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            style="@style/ItemTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="원"
+                            android:textColor="#AAFFFFFF"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
                 </LinearLayout>
 
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="bottom"
+                    android:paddingBottom="10dp">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="18dp"
+                        android:background="#182128" />
+
+                    <com.gigamole.navigationtabstrip.NavigationTabStrip
+                        android:id="@+id/aguide_nts"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginStart="30dp"
+                        app:nts_active_color="#fff"
+                        app:nts_animation_duration="300"
+                        app:nts_color="#3cdedd"
+                        app:nts_corners_radius="3.5dp"
+                        app:nts_factor="0.8"
+                        app:nts_gravity="bottom"
+                        app:nts_inactive_color="#81ffffff"
+                        app:nts_titles="@array/titles"
+                        app:nts_type="point"
+                        app:nts_weight="7dp" />
+
+                </FrameLayout>
+
             </LinearLayout>
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_gravity="bottom">
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="4dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="18dp"
-                    android:background="#182128" />
-
-                <com.gigamole.navigationtabstrip.NavigationTabStrip
-                    android:id="@+id/aguide_nts"
-                    android:layout_width="match_parent"
-                    android:layout_height="42dp"
-                    android:layout_gravity="center"
-                    android:layout_marginEnd="30dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="30dp"
-                    android:layout_marginStart="30dp"
-                    app:nts_active_color="#fff"
-                    app:nts_animation_duration="300"
-                    app:nts_color="#3cdedd"
-                    app:nts_corners_radius="3.5dp"
-                    app:nts_factor="0.8"
-                    app:nts_gravity="bottom"
-                    app:nts_inactive_color="#81ffffff"
-                    app:nts_titles="@array/titles"
-                    app:nts_type="point"
-                    app:nts_weight="7dp" />
-
-            </FrameLayout>
 
         </android.support.design.widget.CoordinatorLayout>
 

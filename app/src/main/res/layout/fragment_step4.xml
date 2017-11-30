@@ -4,7 +4,96 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
-    android:orientation="vertical">
+    android:orientation="horizontal">
 
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <View style="@style/Divider" />
+
+                <LinearLayout
+                    android:id="@+id/fs4_soda"
+                    style="@style/Fs3Layout"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/ItemTextView"
+                        android:text="음료수" />
+
+                    <TextView
+                        style="@style/ItemTextView"
+                        android:layout_width="match_parent"
+                        android:gravity="bottom|right"
+                        android:text="700원"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <View style="@style/Divider" />
+
+                <LinearLayout
+                    android:id="@+id/fs4_frenchfied"
+                    style="@style/Fs3Layout"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/ItemTextView"
+                        android:text="감자튀김" />
+
+                    <TextView
+                        style="@style/ItemTextView"
+                        android:layout_width="match_parent"
+                        android:gravity="bottom|right"
+                        android:text="2,000원"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <View style="@style/Divider" />
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_margin="12dp"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fs4_fab_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_margin="12dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:scaleType="center"
+                app:fabSize="normal"
+                app:srcCompat="@drawable/ic_listadd" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fs4_fab_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_margin="12dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:scaleType="center"
+                app:fabSize="normal"
+                app:srcCompat="@drawable/ic_archive" />
+        </LinearLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
 </LinearLayout>

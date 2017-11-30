@@ -5,6 +5,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+
 /**
  * Created by pengu on 2017-11-02.
  */
@@ -22,7 +24,8 @@ public class DBManager extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(" CREATE TABLE LOGDATA ( " +
                 " _id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                " NAME TEXT);");
+                " NAME TEXT," +
+                " PRICE INTEGER);");
     }
 
     @Override
@@ -30,6 +33,26 @@ public class DBManager extends SQLiteOpenHelper {
 
     }
 
+
+    public void insert(String name, int price) {
+        db = getWritableDatabase();
+        db.execSQL(" INSERT INTO LOGDATA VALUES ( " +
+                " null, " +
+                "'" + name + "'," +
+                price + ");");
+        db.close();
+    }
+
+    public ArrayList<Item> getValue(){
+        ArrayList<Item> list = new ArrayList<>();
+        db = getReadableDatabase();
+        cursor = db.rawQuery("SELECT NAME, PRICE FROM LOGDATA;", null);
+        while(cursor.moveToNext()){
+            list.add(new Item(cursor.getString(0), cursor.getInt(1)));
+        }
+        cursor.close();
+        return list;
+    }
 
     public int getSize() {
         db = getReadableDatabase();

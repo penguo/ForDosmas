@@ -3,18 +3,15 @@ package com.pepg.fordosmas;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.view.KeyEvent;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.EditorInfo;
-import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 public class Step1Fragment extends Fragment implements View.OnClickListener {
 
-    LinearLayout fs1cow, fs1chicken, fs1mix;
+    LinearLayout fs1cow, fs1chicken, fs1mix, fs1tender;
     Activity activity;
 
     public Step1Fragment() {
@@ -32,10 +29,12 @@ public class Step1Fragment extends Fragment implements View.OnClickListener {
         fs1cow = (LinearLayout) layout.findViewById(R.id.fs1_cow);
         fs1chicken = (LinearLayout) layout.findViewById(R.id.fs1_chicken);
         fs1mix = (LinearLayout) layout.findViewById(R.id.fs1_mix);
+        fs1tender = (LinearLayout) layout.findViewById(R.id.fs1_tender);
 
         fs1cow.setOnClickListener(this);
         fs1chicken.setOnClickListener(this);
         fs1mix.setOnClickListener(this);
+        fs1tender.setOnClickListener(this);
 
         activity = getActivity();
 
@@ -60,6 +59,10 @@ public class Step1Fragment extends Fragment implements View.OnClickListener {
                     AddActivity.price += 500;
                     AddActivity.selectedCow = true;
                 }
+                if (AddActivity.selectedTender) {
+                    AddActivity.price -= 1000;
+                    AddActivity.selectedTender = false;
+                }
                 ((AddActivity) activity).setNextData();
                 break;
             case (R.id.fs1_chicken):
@@ -69,6 +72,10 @@ public class Step1Fragment extends Fragment implements View.OnClickListener {
                 if (AddActivity.selectedCow) {
                     AddActivity.price -= 500;
                     AddActivity.selectedCow = false;
+                }
+                if (AddActivity.selectedTender) {
+                    AddActivity.price -= 1000;
+                    AddActivity.selectedTender = false;
                 }
                 ((AddActivity) activity).setNextData();
                 break;
@@ -80,6 +87,24 @@ public class Step1Fragment extends Fragment implements View.OnClickListener {
                     AddActivity.price -= 500;
                     AddActivity.selectedCow = false;
                 }
+                if (AddActivity.selectedTender) {
+                    AddActivity.price -= 1000;
+                    AddActivity.selectedTender = false;
+                }
+                ((AddActivity) activity).setNextData();
+                break;
+            case (R.id.fs1_tender):
+                AddActivity.fs1 = "텐더";
+                resetBackground();
+                fs1tender.setBackgroundResource(R.drawable.xml_border_line_selected);
+                if (AddActivity.selectedCow) {
+                    AddActivity.price -= 500;
+                    AddActivity.selectedCow = false;
+                }
+                if (!AddActivity.selectedTender) {
+                    AddActivity.price += 1000;
+                    AddActivity.selectedTender = true;
+                }
                 ((AddActivity) activity).setNextData();
                 break;
         }
@@ -87,9 +112,12 @@ public class Step1Fragment extends Fragment implements View.OnClickListener {
     }
 
     private void resetBackground() {
-        fs1cow.setBackgroundResource(R.drawable.xml_border_line);
-        fs1chicken.setBackgroundResource(R.drawable.xml_border_line);
-        fs1mix.setBackgroundResource(R.drawable.xml_border_line);
+        TypedValue outValue = new TypedValue();
+        getContext().getTheme().resolveAttribute(android.R.attr.selectableItemBackground, outValue, true);
+        fs1cow.setBackgroundResource(outValue.resourceId);
+        fs1chicken.setBackgroundResource(outValue.resourceId);
+        fs1mix.setBackgroundResource(outValue.resourceId);
+        fs1tender.setBackgroundResource(outValue.resourceId);
     }
 
     private void setBackground() {
@@ -102,6 +130,9 @@ public class Step1Fragment extends Fragment implements View.OnClickListener {
                 break;
             case ("믹스"):
                 fs1mix.setBackgroundResource(R.drawable.xml_border_line_selected);
+                break;
+            case ("텐더"):
+                fs1tender.setBackgroundResource(R.drawable.xml_border_line_selected);
                 break;
         }
     }

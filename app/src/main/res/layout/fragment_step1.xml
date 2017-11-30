@@ -7,6 +7,7 @@
     android:padding="10dp"
     android:orientation="vertical">
 
+    <View style="@style/Divider" />
     <LinearLayout
         android:id="@+id/fs1_cow"
         style="@style/SettingLayout"
@@ -25,6 +26,7 @@
 
     </LinearLayout>
 
+    <View style="@style/Divider" />
     <LinearLayout
         android:id="@+id/fs1_chicken"
         style="@style/SettingLayout"
@@ -34,6 +36,7 @@
             style="@style/ItemTextView"
             android:text="닭" />
     </LinearLayout>
+    <View style="@style/Divider" />
 
     <LinearLayout
         android:id="@+id/fs1_mix"
@@ -44,5 +47,26 @@
             style="@style/ItemTextView"
             android:text="믹스" />
     </LinearLayout>
+
+    <View style="@style/Divider" />
+    <LinearLayout
+        android:id="@+id/fs1_tender"
+        style="@style/SettingLayout"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/ItemTextView"
+            android:text="텐더" />
+
+        <TextView
+            style="@style/ItemTextView"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:gravity="bottom|right"
+            android:text="+ 1000원"
+            android:textSize="20sp" />
+    </LinearLayout>
+    <View style="@style/Divider" />
 
 </LinearLayout>

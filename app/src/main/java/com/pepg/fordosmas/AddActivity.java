@@ -1,5 +1,6 @@
 package com.pepg.fordosmas;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
@@ -20,8 +21,11 @@ public class AddActivity extends AppCompatActivity {
     public static String fs1, fs2, fs3, fs4, result;
     public static int price, fragmentSize;
     public static boolean bJumbo, bWedge, bDoubleCheese, bMozarella, bJalapeno, bBean;
-    public static boolean firstPay, selectedCow;
+    public static boolean firstPay, selectedCow, selectedTender;
+    public static boolean sSoda, sFrench;
     public static ArrayList<String> additionMenu;
+    public static ArrayList<String> subMenu;
+    public static String results;
 
     ViewPager vp;
     NavigationTabStrip nts;
@@ -88,6 +92,9 @@ public class AddActivity extends AppCompatActivity {
 
     public void addPageSize() {
         fragmentSize++;
+        if(fragmentSize == 3){
+            fragmentSize++;
+        }
         pa.notifyDataSetChanged();
     }
 
@@ -107,6 +114,18 @@ public class AddActivity extends AppCompatActivity {
         bBean = false;
         firstPay = false;
         selectedCow = false;
+        sSoda = false;
+        sFrench = false;
         additionMenu = new ArrayList<>();
+        subMenu = new ArrayList<>();
+    }
+
+    public void addMore(){
+        DBManager dbManager = new DBManager(this, "dosmas.db", null, MainActivity.DB_VERSION);
+        dbManager.insert(result, price);
+        results += result + "\n";
+        Intent intent = new Intent(AddActivity.this, AddActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

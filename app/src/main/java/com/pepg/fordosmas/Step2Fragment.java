@@ -20,6 +20,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,17 +35,16 @@ public class Step2Fragment extends Fragment implements View.OnClickListener {
     LinearLayout fs2Spice0, fs2Spice2, fs2Spice9;
     Activity activity;
 
-    public Step2Fragment(){
+    public Step2Fragment() {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState)
-    {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-    {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_step2, container, false);
 
         fs2Spice0 = (LinearLayout) layout.findViewById(R.id.fs2_spice0);
@@ -67,32 +67,34 @@ public class Step2Fragment extends Fragment implements View.OnClickListener {
         if (AddActivity.fragmentSize == 2) {
             ((AddActivity) activity).addPageSize();
         }
-        switch(view.getId()){
-            case(R.id.fs2_spice0):
-                AddActivity.fs2="안매";
+        switch (view.getId()) {
+            case (R.id.fs2_spice0):
+                AddActivity.fs2 = "안매";
                 resetBackground();
                 fs2Spice0.setBackgroundResource(R.drawable.xml_border_line_selected);
-                ((AddActivity)activity).setNextData();
+                ((AddActivity) activity).setNextData();
                 break;
-            case(R.id.fs2_spice2):
-                AddActivity.fs2="조매";
+            case (R.id.fs2_spice2):
+                AddActivity.fs2 = "조매";
                 resetBackground();
                 fs2Spice2.setBackgroundResource(R.drawable.xml_border_line_selected);
-                ((AddActivity)activity).setNextData();
+                ((AddActivity) activity).setNextData();
                 break;
-            case(R.id.fs2_spice9):
-                AddActivity.fs2="아주매운맛";
+            case (R.id.fs2_spice9):
+                AddActivity.fs2 = "아주매운맛";
                 resetBackground();
                 fs2Spice9.setBackgroundResource(R.drawable.xml_border_line_selected);
-                ((AddActivity)activity).setNextData();
+                ((AddActivity) activity).setNextData();
                 break;
         }
     }
 
-    private void resetBackground(){
-        fs2Spice0.setBackgroundResource(R.drawable.xml_border_line);
-        fs2Spice2.setBackgroundResource(R.drawable.xml_border_line);
-        fs2Spice9.setBackgroundResource(R.drawable.xml_border_line);
+    private void resetBackground() {
+        TypedValue outValue = new TypedValue();
+        getContext().getTheme().resolveAttribute(android.R.attr.selectableItemBackground, outValue, true);
+        fs2Spice0.setBackgroundResource(outValue.resourceId);
+        fs2Spice2.setBackgroundResource(outValue.resourceId);
+        fs2Spice9.setBackgroundResource(outValue.resourceId);
     }
 
     private void setBackground() {

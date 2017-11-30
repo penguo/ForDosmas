@@ -14,4 +14,7 @@
     <string name="mozarella">모짜</string>
     <string name="jalapeno">할라피뇨</string>
     <string name="bean">콩</string>
+
+    <string name="soda">음료수</string>
+    <string name="french">감자튀김</string>
 </resources>

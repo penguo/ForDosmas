@@ -8,6 +8,7 @@
     android:orientation="vertical">
 
 
+    <View style="@style/Divider" />
     <LinearLayout
         android:id="@+id/fs2_spice0"
         style="@style/SettingLayout"
@@ -17,6 +18,7 @@
             style="@style/ItemTextView"
             android:text="안 매운 맛" />
     </LinearLayout>
+    <View style="@style/Divider" />
 
     <LinearLayout
         android:id="@+id/fs2_spice2"
@@ -28,6 +30,7 @@
             android:text="조금 매운 맛" />
     </LinearLayout>
 
+    <View style="@style/Divider" />
     <LinearLayout
         android:id="@+id/fs2_spice9"
         style="@style/SettingLayout"
@@ -38,4 +41,5 @@
             android:text="아주 매운 맛" />
     </LinearLayout>
 
+    <View style="@style/Divider" />
 </LinearLayout>
